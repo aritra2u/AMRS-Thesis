@@ -1,0 +1,17 @@
+\chapter{Implementation}
+
+	\section{Loading Data}
+	
+		\subsection{Song Database}
+			The Trie (\ref{sec:trie}) data structure is used to load the Million Song Dataset (\ref{sec:million_song_dataset}). The trie is created with the titles of the songs as an index. Each key node also stores with itself some data which is used frequently, for e.g., its unique track ID using which all other song informations can be referenced from the MIllion Song Dataset and artist information. We store the artist as a song is uniquely identified using its title and artist, which is used for other API calls. Trie enables faster searching and computation of Levenshtein Distances (\ref{sec:levenshtein_distance}) for the titles of the songs.
+			
+		\subsection{Common Genres}
+		
+	
+	\section{Fetch and Clean User Data}
+	
+	\section{Model User Interests}
+	
+	\section{Determine Similar Users}
+	
+	\section{Recommend based on user's mood}

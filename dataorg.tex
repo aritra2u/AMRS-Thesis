@@ -1,0 +1,33 @@
+\chapter{Data Acquisition}
+	Several websites contain information about songs, artists and other relevant media descriptions, some of which also includes their signal analysis. In this section, the Million Song Dataset (Section \ref{sec:million_song_dataset}) is briefly presented and few of its features are described.
+	
+	Obtaining a considerable amount of user's song listening history is crucial to be able to recommend songs to other similar users. The publicly available Last.fm API (Section \ref{sec:lastfm_api}) used for this purpose has also been introduced and its features briefly described.
+	
+	\section{Million Song Dataset}
+	\label{sec:million_song_dataset}
+		The Million Song Dataset\footnote{\url{http://labrosa.ee.columbia.edu/millionsong/}} is a freely-available collection of audio features and metadata for a million contemporary popular music tracks. The dataset started as a collaborative project between \emph{LabROSA} and \emph{The Echo Nest}\footnote{\url{http://echonest.com/}}. It includes data contributed by other similar communities doing similar work like \emph{Last.fm}\footnote{\url{http://last.fm/}}, \emph{Musicbrainz}\footnote{\url{http://musicbrainz.org/}}, \emph{SecondHandSongs}\footnote{\url{http://secondhandsongs.com}}, etc.
+		
+		\subsection{Data}
+			It contains \cite{Bertin-Mahieux2011}:
+\begin{itemize}
+	\item 280 GB of data
+	\item 1,000,000 songs/files
+	\item 44,745 unique artists
+	\item 7,643 unique terms (\emph{Echo Nest} tags)
+	\item 2,321 unique \emph{Musicbrainz} tags
+	\item 43,943 artists with at least one term
+	\item 2,201,916 asymmetric similarity relationships
+	\item 515,576 dated tracks starting from 1922
+\end{itemize}
+
+		The songs/files are stored in HDF5\footnote{\url{http://www.hdfgroup.org/HDF5/}} format to be able to efficiently handle variety of audio features. It contains basic meta-data like \emph{title}, \emph{artists}, \emph{year} of composition, \emph{duration}, \emph{IDs} mapped to other popular song databases (\emph{Last.fm}, \emph{Musicbrainz}, \emph{The Echo Nest}), etc. as well as MFCC (\ref{subsec:mfcc}) features like \emph{beats}, \emph{danceability}, \emph{energy}, \emph{tempo}, \emph{loudness}, and several other features.
+		
+		\subsection{Mel-Frequency Cepstrum Coefficients (MFCC)}
+		\label{subsec:mfcc}
+			The extraction and selection of the best parametric representation of acoustic signals are important tasks in the design of any speech recognition system. It significantly affects the recognition performance. A compact representation would be provided by a set of \emph{Mel-Frequency Cepstrum Coefficients} \cite{zheng2001comparison}, which are the results of a cosine transform of the real logarithm of the short-term energy spectrum expressed on a mel-frequency scale \cite{pols1966spectral}. The MFCCs are proved more efficient \cite{davis1980comparison}.
+
+	\section{Last.fm API}
+	\label{sec:lastfm_api}
+		Last.fm scrobbles user music listening activity via plugins installed on the user's devices or directly from the music players. It uses these mined data to evaluate popularity of the songs, compare music history to find similar users and finally recommend songs. Last.fm uses collaborative filtering for recommendation. Last.fm has built an extensive database of songs and its related meta data like artists, albums, genres etc. It also provides several statistical data regarding songs, artists and albums.
+		
+		Last.fm API\footnote{\url{http://last.fm/api}} has been used to fetch user's song history and the genres of the songs obtained from the Million Song Dataset.

@@ -1,0 +1,20 @@
+\chapter{Related Work}
+	There is a lot of interesting product and implementation related projects in the field of music recommendation. There are two primary ways to categorize and identify similar music, either by analyzing and mathematically formulating the audio signals or by mining from a plethora of available music related metadata. Some of the well known projects have been introduced below.
+
+	\section{Pandora Radio}
+		Pandora Radio\footnote{\url{http://www.pandora.com/}}, one of the most popular music recommendation and discovery services on the Internet today, bases its recommendations on data from the Music Genome Project (\ref{subsec:music_genome}) \cite{john2006pandora}. It uses \emph{musicological analysis} \cite{magno2008comparison} form of recommendation. Pandora has no concept of genre, user connections or ratings. When a user listens to a radio station on Pandora, it uses a pretty radical approach to delivering user’s personalized selections; having analyzed the musical structures present in the songs one likes, it plays other songs that possess similar musical traits.
+		
+		An important aspect of Pandora is its feedback system. This allows users to like or dislike a presented song. Pandora makes efficient use of proximity measure algorithm \cite{howepandora} to recommend music from its database that matches user’s choice. Based on this, Pandora then recommends music and adapts its recommendations to match the user’s taste.
+		
+		\subsection{Music Genome Project}
+		\label{subsec:music_genome}
+			The Music Genome Project\footnote{\url{https://www.pandora.com/about/mgp}} \cite{castelluccio2006music} assigns a vector of up to 400 `genes' (or attributes) to every song. These attributes capture the musical identity of a song and many other significant qualities that are relevant to understand the musical preferences of listeners. These `genes' correspond to attributes of the track such as \emph{gender of lead vocalist}, \emph{type of background vocals}, \emph{level of distortion}, etc. Each determined gene is given a score in the range of \(0\) to \(5\), with intervals of \(0.5\). Given the vector of one or more songs, a list of other similar songs is constructed using a distance function.
+			
+			 The project employs musical analysts who listen to music and rate songs based on those attributes. These analytics then gets imported into Pandora computer analytics system that is presented to the users for their feedback. Pandora takes that feedback and develops playlist metrics and recommends it to the users.
+		
+
+	\section{Modelling Internet Radio Streams}
+	\label{sec:modelling_internet_radio}
+		The radio can provide useful data regarding the popularity of a song and those that are trending. Radio usually plays music as per their listener's requests or based on prediction which will increase their user base. Either way, it is a fair source to determine a song's popularity. Internet Radio are no way behind in this regard, but they also happen to provide very structured information regarding the played songs and possibly the upcoming playlist.
+		
+		Yahoo! attempts to mine this data obtained from several internet radio stations over a considerable period of time \cite{aizenberg2012build}. It can then be used to create all sorts of popularity and/or trends related charts for songs, artists, albums etc. Such kind of information often proves vital while recommending songs. A music enthusiast may like to hear a trending song, even if the songs does not match her preferred genre.

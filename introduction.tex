@@ -1,0 +1,28 @@
+\chapter{Introduction}
+	Recommendation systems is an extensive class of web applications that involve predicting 
+user responses to options. It is a subclass of information filtering system. The main purpose of recommendation systems is to generate plausible options to users for items or products of their interest. These systems build up the user profile usually based on their past search history or ratings and compares it with some reference characteristics.
+
+	Recommendation systems are broadly categorized on the basis of how they analyze data sources to develop notions of affinity between the user and the items which can be used to identify well-matched pairs. They are:
+\begin{itemize}
+	\item Content-based: The user's profile, created with their preferences and any available history, is compared with various candidate items and the best matching items are recommended.
+	\item Collaborative-based: Large amounts of information on several users' preferences and activities are analyzed to obtain the similarity among users and thus predicting the future interests. Collaborative filtering is capable of recommending complex items without requiring its ``understanding" accurately.
+	\item Hybrid: This approach involves both content-based and collaborative-based filtering while recommending.
+\end{itemize}
+
+	Recommendation systems are of great importance for the success of e-commerce and the IT industry and are gradually gaining popularity and becoming an active area for research. They enhance user experience by assisting them in finding information and reducing search and navigation time. In addition, recommendation systems increase productivity and creditability of a user. These systems have evolved to fulfill the natural dual need of buyers and sellers by automating the generation of recommendations based on data analysis.
+
+	Recommendation systems are gaining popularity in the field of music as well. One of the well known example is \emph{Pandora Internet Radio}\footnote{\url{http://www.pandora.com/}}, which is an automated music recommendation service. Music recommendation systems ask for user’s ratings, like or dislike for particular artists, songs or albums, and based on these parameters it recommends choices closer to their taste.
+
+	\section{Motivation}
+		Most of the modern recommendation systems we come across use hybrid filtering, i.e., take into consideration a user's choices and cross-reference it against large amounts of user data finding similar interests. Even though this method works fine for some cases, there is a scope for improvement.
+
+		Recommending music to a user based on her pre-set choices may not be a success if she is in a totally different \emph{mood}. We can determine the \emph{mood} of a user by analyzing her recent history. The recent history considered to predict the mood is kept rolling forward, so as to accommodate the fact that a user's mood changes with time and music. This mood cross-referenced with content and collaborative filtering tend to give better recommendations.
+
+	\section{The Problem}
+		The mood of a music enthusiast can be determined by the songs she has heard recently. The mood usually changes gradually over time and can be modeled by the genre of the songs. Mood once modeled can be collaboratively compared and thus help conclude the preference of a song after a set of given songs (which determine the mood) as heard by other ``similar" users.
+
+	\section{Contributions of this Thesis}
+		There are two main contributions of this thesis. The first is to determine the rolling current mood of a user based on her recently played tracks. The challenge here is to optimize the monitored rolling time duration and to come up with a method to compare two set of moods. The second contribution is to come up with a set of weights for each of the contributing factor, i.e., mood, user's preferences and collaborative filtering to obtain a confidence score for each recommendation at any given instant.
+
+	\section{Organization of this Thesis}
+		The rest of this thesis is organized as follows. Chapter 2 presents related work done. Chapter 3 discusses the various background work that one must be acquainted with in order to understand the work presented. Chapter 4 discusses the data sources and APIs used to set up a sample infrastructure of the recommendation system. Chapter 5 then discusses in detail the implemented methods and algorithms. Chapter 6 presents a summary of the results that was achieved and also talks about what can be done further.
