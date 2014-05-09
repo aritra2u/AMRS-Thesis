@@ -47,6 +47,7 @@
 			\end{figure}
 
 	\section{Hungarian Algorithm}
+	\label{sec:hungarian}
 		The Hungarian method is an algorithm which finds an optimal assignment for a given cost matrix. It is also known as the \emph{Kuhn-Munkres Algorithm}. The original algorithm \cite{kuhn1955hungarian} had a time-complexity of \(\emph{O}(n^4)\); however, it was later modified to obtain a running time complexity of \(\emph{O}(n^3)\).
 		
 		\subsection{Definition}
@@ -71,6 +72,8 @@
 		A trie can also be used to represent data types that are objects of any type, for example, strings of integers. Various operations such as searching, deletion, insertion etc. can be performed on a trie. One of the advantages of the trie data structure is that its tree depth depends on the amount of data stored in it. Each element of data is stored at the highest level of the tree that still allows a unique retrieval.
 		
 		Applications of trie may include sotring a predictive text or an autocomplete dictionary like the one found on a telephone. It is also useful in implementating approximate matcing algorithms including those used in hyphenation and spell checking software.
+		
+		The insertion to and serching in a \emph{trie} has a time complexity of \emph{O(key\_length)}, each. The space complexity however, is of \emph{O(alphabet\_size * key\_length)}
 		
 		\begin{figure}[h!]
 			\centering
