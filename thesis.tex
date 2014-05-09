@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,oneside]{book}
+\documentclass[12pt,a4paper]{book}
 
 % margins
 \usepackage[left=35mm,top=25mm,right=25mm,bottom=25mm]{geometry}
@@ -58,7 +58,8 @@
 	\frontmatter
 	\include{title}
 	
-%	\thispagestyle{empty}
+	\thispagestyle{empty}
+	\include{certificate}
 %	\includepdf{certificate.pdf}
 
 	\pagenumbering{roman}
@@ -80,7 +81,7 @@
 	\listoffigures
 	\addcontentsline{toc}{chapter}{List of Figures}
 %	\listofalgorithms
-	\addcontentsline{toc}{chapter}{List of Algorithms}
+%	\addcontentsline{toc}{chapter}{List of Algorithms}
 	
 	\mainmatter
 	\doublespacing

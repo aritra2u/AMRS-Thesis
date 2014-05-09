@@ -48,7 +48,7 @@
 
 	\section{Hungarian Algorithm}
 	\label{sec:hungarian}
-		The Hungarian method is an algorithm which finds an optimal assignment for a given cost matrix. It is also known as the \emph{Kuhn-Munkres Algorithm}. The original algorithm \cite{kuhn1955hungarian} had a time-complexity of \(\emph{O}(n^4)\); however, it was later modified to obtain a running time complexity of \(\emph{O}(n^3)\).
+		The Hungarian method is an algorithm which finds an optimal assignment for a given cost matrix. It is also known as the \emph{Kuhn-Munkres Algorithm}. The original algorithm \cite{kuhn1955hungarian} had a time-complexity of \(\emph{O}(n^4)\); however, it was later modified to obtain a running time complexity of \(\emph{O}(n^3)\) \cite{munkres1957algorithms}.
 		
 		\subsection{Definition}
 			Assuming that numerical costs are available for each of \(n\) persons on each of \(n\) jobs, the \emph{assignment problem} is the quest for an assignment of persons to jobs so that the sum of the \(n\) costs so obtained is as small as possible.
@@ -63,7 +63,25 @@
 			\end{bmatrix}
 		\]
 		
-		An assignment is a set of \(n\) entry positions in the cost matrix, no two of which lie in the same row or column. The sum of the \(n\) entries of an assignment is its cost. An assignment with the smallest possible cost is called an \emph{optimal assignment}.
+			An assignment is a set of \(n\) entry positions in the cost matrix, no two of which lie in the same row or column. The sum of the \(n\) entries of an assignment is its cost. An assignment with the smallest possible cost is called an \emph{optimal assignment}.
+		
+		\subsection{Example}
+			For example, say you have three workers: Jim, Steve and Alan. You need to have one of them clean the bathroom, another sweep the floors \& the third wash the windows. What’s the best (minimum-cost) way to assign the jobs? First we need a matrix of the costs of the workers doing the jobs.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | l || c | c | c | }
+		\hline
+				& Clean Bathroom	& Sweep Floors	& Wash Windows	\\ \hline \hline
+		Jim		& \$1				& \$3			& \$3				\\ \hline
+		Steve	& \$3				& \$2			& \$3				\\ \hline
+		Alan		& \$3				& \$3			& \$2				\\ \hline
+	\end{tabular}
+	\caption{Cost Matrix for the Hungarian Method example}
+	\label{table:hungarian_example}
+\end{table}
+			
+			Then the Hungarian method, when applied to the table below would give us the minimum cost it can be done with: Jim cleans the bathroom, Steve sweeps the floors and Alan washes the windows.
 	
 	\section{Trie}
 	\label{sec:trie}
@@ -75,7 +93,7 @@
 		
 		The insertion to and serching in a \emph{trie} has a time complexity of \emph{O(key\_length)}, each. The space complexity however, is of \emph{O(alphabet\_size * key\_length)}
 		
-		\begin{figure}[h!]
+		\begin{figure}[ht!]
 			\centering
 			\includegraphics[width=10cm]{trie.png}
 			\caption{Trie with the words ``tree", ``trie", ``algo", ``assoc", ``all", and ``also" \label{trie}}
