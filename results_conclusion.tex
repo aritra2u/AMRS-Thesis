@@ -1,8 +1,10 @@
 \chapter{Results}
 	\section{Tests}
-		The most recent \(5\) songs are used for testing purposes. In such cases, the recommendations include songs following the first \(2\). The recommended songs are then matched with these \(2\) songs and a mean of those \(5\) x \(2\) comparisons are taken to compare results.
+		Tables \ref{table:test_results_3en}, \ref{table:test_results_rj}, \ref{table:test_results_eartle}, \ref{table:test_results_franhale}, \ref{table:test_results_massdosage} illustrates the tests have been performed on \(5\) Last.FM users' histories (``3en'', ``RJ'', ``eartle'', ``franhale'', ``massdosage'') by varying the parameters such as the number of similar users selected for collaborative filtering, the number of songs to define a mood, and the set of weightages (artist, loudness, tempo) given to each property of the song to calculate its similarity with others.
+
+		The confidence is the measure of similarity of a ``mood window'', found in the history of another user having a very similar musical taste, which is most ``similar'' to that of the ``mood window'' considered for the current user.
 		
-		The tests have been performed for a few Last.FM users (``3en'', ``RJ'', ``eartle'', ``franhale'', ``massdosage'') by varying parameters such as the number of similar users selected for collaborative filtering, the number of songs to define a mood, and the set of weightages (artist, loudness, tempo) given to each property of the song to calculate it similarity with others. The confidence similarity of the best recommended track is noted as well as the rank of a song in the recommendation that has actually been heard by the user, in the set of test songs defined above.
+		The most recent \(t\) songs are used for testing purposes and the recommendations are based on the songs following the first \(t\). The rank of a song in the recommendation that occurs in the set of test songs defined above is also noted down.
 		
 \begin{table}[h!]
 \centering
@@ -188,6 +190,13 @@ Similar Users	& Mood Length	& Weights							&Confidence	&Rank\\
 \caption{Test Results for Last.FM user: \emph{massdosage}}
 \label{table:test_results_massdosage}
 \end{table}
+
+	\section{Inference}
+		The higher the ``confidence'' value, the more similar is its corresponding ``mood'' to that of the current user's present mood and thus the chances of the current user liking the song heard by the other user right after the above window get higher.
+		
+		The rank illustrates the success of the recommendation by cross-checking with the songs the current user has actually heard next, i.e, the set of test songs chosen above. This however, determines the success of the tool in the current domain of the \(999,999\) songs.
+		
+		Based on the test results, it can inferred that a \emph{mood length} of \(5\) based on the histories of \(75\) other users with similar musical taste gives a set of good results. The song's property weightage of \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\) is also seen to contribute well to the recommendations. Hence, these values are taken to be the default values of the tool. These can however be customised to give more weightage to a parameter of choice and thus get different sets of results.
 	
 	\section{Improvements}
 		This recommendation system has been built more as a \emph{proof of concept} than a competitive tool. A lot of things may enhance the performance the results of the recommendation and to make it even more accurate. Some of them have been discussed below.
@@ -200,8 +209,8 @@ Similar Users	& Mood Length	& Weights							&Confidence	&Rank\\
  	\item Feedback: If a user skips a certain song, the recommendation engine should learn not to present her with the song anytime soon again. The weights for each parameters can be dynamically changed as per the user feedback using machine learning techniques.
  \end{itemize} 
 	
-	\section{Conclusion}
+	\section{Summary}
 \begin{itemize}
 	\item Mood: This plays a very significant role in the process of recommendation and has not been very widely tapped. The type of songs a user has been listening to tells a great deal about her current mood and proves to be prominent factor in determining the songs she might want to hear next.
-	\item Popularity: This parameter has been gaining importance as new artists come up with various types of songs, which are hard to categorize and thus include in suggestions. Including popularity gives a way to recommend any trending song even if it does not match the user's preferences.
+	\item Popularity: This parameter has been gaining importance as new artists come up with various types of songs, which are hard to categorize and thus to be recommended. Including popularity gives a way to recommend any trending song even if it does not match the user's preferences.
 \end{itemize}
