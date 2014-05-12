@@ -1,39 +1,4 @@
 \chapter{Development Details}
-	\section{Tools/Libraries}
-\begin{itemize}
-	\item Eclipse: An Integrated Development Environment helpd speed up the process of coding and its subsequent debugging.
-	\item Java: Being a very common and widely used programming language, loads of  documentation and 3\textsuperscript{rd} party libraries are avialable.
-	\item Maven: A dependency resolver fetching all the required dependencies given the name and version of the required libraries.
-	\item Jedis (Redis): A java implementation of the Redis DB server. Redis is an in-memory key-value pair DB.
-	\item Apache Tomcat: An HTTP servlet implement in and for java execution environments.
-\end{itemize}
-
-	\section{System Requirements}
-		The code and tests have been successfully run on the following configuration. Any system with a configuration equal or higher than this should be able to not only to the job but faster.
-\begin{itemize}
-	\item RAM: 16GB; fails to run on 8GB, due to the high amount of in memory data.
-	\item CPU: Intel Core i7, 4th Generation; have used all 8 virtual cores with hyper-threading, with lower CPU, processes would take longer to complete.
-	\item HDD: 280GB dedicated; Million Song Dataset is the only component using considerable persistent memory. Storing user history and codes consume very minimal data storage (in MBs).
-	\item Internet Connection: A suitably fast internet connection to getch user history and a few song information. Slower internet speeds might slow down the entire workflow.
-\end{itemize}
-
-	\section{Optimizations}
-\begin{itemize}
-	\item Parallelization: Due to most of the code being independent to each other in nature, they can very well be run in parallel as a multi-threaded task. 16 thread has been found to be the optimal for speed on a CPU with 8 virtual cores (2 hyperthreads per core).
-	\item On-Demand: Most songs from the dataset would not be required for recommending, and might consume some valuable runtime. The songs are loaded in the memory at the first missed access. This not only ensures faster runtime but also a lower comsumption of physical memory.
-	\item Load Minimal Data Efficiently: Only song data like \emph{loundess}, \emph{tempo} and \emph{hotness} that is required for recommending is loaded into memory. This data is stored in a serialized JSON format. This lightens the overhead of high-level data structures.
-	\item Prevent File Access: Each song's information in the million song dataset is stored away in a separate file for each. This heightens the overhead of several files being opend and closed at runtime. Also, there is a limit imposed by the OS to the number of files that can remain open at any given point of time. Thus, only the required information has been extracted, compressed into a serialized format and loaded in memory on an on-demand basis.
-\end{itemize}
-	
-	\section{Complications}
-\begin{itemize}
-	\item Last.FM API: The API is not very robust when multiple calls are made in a short span of time. Several of the calls tend to get failed resulting in the obtained history being corrupted. This restricts the use of multi-threading to fetch user data, which would have improved the runtime significantly.
-\end{itemize}
-	
-	\section{Improvements}
-\begin{itemize}
-	\item Distributed Systems: Using over an NFS could not only help parallel processing significantly without the overhead of  context switching in threads, but also could share the dataset on a single drive. It could also load balance the recommendation requests. Also, the issue of making parallel call to Last.FM would be solved thus acheiving a faster pre-processing.
-\end{itemize}
 
 %	\section{Last.FM APIs}
 %		An api-key is required for calling the api. This can be obtained by creating a developer account on their website.

@@ -1,8 +1,8 @@
 \chapter{Results}
 	\section{Tests}
-		The most recent \(2\) tracks are used for testing purposes. In such cases, the recommendations include tracks following the 1\textsuperscript{st} \(2\) songs. The recommended songs are then matched with these \(2\) songs and a mean of those \(5\) x \(2\) comparisons are taken to compare results.
+		The most recent \(5\) songs are used for testing purposes. In such cases, the recommendations include songs following the first \(2\). The recommended songs are then matched with these \(2\) songs and a mean of those \(5\) x \(2\) comparisons are taken to compare results.
 		
-		The tests have been performed for a few users by varying parameters such as the number of users selected for collaborative filtering and the number of recent songs of the similar users are to be considered.
+		The tests have been performed for a few Last.FM users (``3en'', ``RJ'', ``eartle'', ``franhale'', ``massdosage'') by varying parameters such as the number of users selected for collaborative filtering and the number of recent songs of the similar users are to be considered.
 	
 	\section{Improvements}
 		This recommendation system has been built more as a \emph{proof of concept} than a competitive tool. A lot of things may enhance the performance the results of the recommendation and to make it even more accurate. Some of them have been discussed below.
@@ -12,10 +12,11 @@
  	\item User History: There is a certain amount of loss while fetching the user history and cleaning it up. It corrupts the determined ``mood'' of the user. Using a cleaner method and a reliable source of history should be able to tackle this matter.
  	\item Users: Currently, the set of users being used for collaborative filtering is not only limited but also very random and does not encompass the different moods and interests of music listeners.
  	\item MFCC: There are several other parameters as obtained from the MFCC analysis of a song. These included appropriately in the computation would significantly bring out better results.
- 	\item Feedback: If a user skips a certain song, the recommendation engine should learn not to present her with the song anytime soon again.
+ 	\item Feedback: If a user skips a certain song, the recommendation engine should learn not to present her with the song anytime soon again. The weights for each parameters can be dynamically changed as per the user feedback using machine learning techniques.
  \end{itemize} 
 	
 	\section{Conclusion}
 \begin{itemize}
 	\item Mood: This plays a very significant role in the process of recommendation and has not been very widely tapped. The type of songs a user has been listening to tells a great deal about her current mood and proves to be prominent factor in determining the songs she might want to hear next.
+	\item Popularity: This parameter has been gaining importance as new artists come up with various types of songs, which are hard to categorize and thus include in suggestions. Including popularity gives a way to recommend any trending song even if it does not match the user's preferences.
 \end{itemize}
