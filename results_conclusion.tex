@@ -2,9 +2,9 @@
 	\section{Tests}
 		Tables \ref{table:test_results_3en}, \ref{table:test_results_rj}, \ref{table:test_results_eartle}, \ref{table:test_results_franhale}, \ref{table:test_results_massdosage} illustrates the tests have been performed on \(5\) Last.FM users' histories (``3en'', ``RJ'', ``eartle'', ``franhale'', ``massdosage'') by varying the parameters such as the number of similar users selected for collaborative filtering, the number of songs to define a mood, and the set of weightages (artist, loudness, tempo) given to each property of the song to calculate its similarity with others.
 
-		The confidence is the measure of similarity of a ``mood window'', found in the history of another user having a very similar musical taste, which is most ``similar'' to that of the ``mood window'' considered for the current user.
+		The confidence is the measure of maximum similarity of a ``mood window'' as defined in Section \ref{subsec:collaborative_filtering} of a given user, to some other ``mood window'' found in the history of a user having a very similar musical taste.
 		
-		The most recent \(t\) songs are used for testing purposes and the recommendations are based on the songs following the first \(t\). The rank of a song in the recommendation that occurs in the set of test songs defined above is also noted down.
+		The most recent \(t\) songs for a given user are used for testing purposes and the recommendations are based on the songs following the first \(t\). The highest rank of the song in the recommendation list which occurs in the set of test songs defined above is also noted down.
 		
 \begin{table}[h!]
 \centering
@@ -12,31 +12,31 @@
 \hline
 Similar Users	& Mood Length	& Weights							&Confidence	&Rank\\
 \hline \hline
-50			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&48.45 \%		&3718\\
+50			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.89 \%		&944\\
 \hline
-75			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&48.45 \%		&3879\\
+75			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.89 \%		&1377\\
 \hline
-100			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&48.45 \%		&84\\
+100			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&63.22 \%		&1898\\
 \hline
-150			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&51.01 \%		&135\\
+150			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&63.61 \%		&2396\\
 \hline
-200			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&52.63 \%		&211\\
+200			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&63.61 \%		&2963\\
 \hline
-50			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&45.06 \%		&3418\\
+50			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&61.69 \%		&713\\
 \hline
-75			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&45.50 \%		&4751\\
+75			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&61.69 \%		&1029\\
 \hline
-100			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&46.93 \%		&1722\\
+100			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&61.56 \%		&1267\\
 \hline
-50			& 5			& \(\rfrac{1}{5}, \rfrac{2}{5}, \rfrac{2}{5}\)	&43.28 \%		&4033\\
+50			& 5			& \(\rfrac{1}{5}, \rfrac{2}{5}, \rfrac{2}{5}\)	&58.84 \%		&1009\\
 \hline
-50			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&60.53 \%		&3632\\
+50			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.57 \%		&936\\
 \hline
-75			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&60.03 \%		&4367\\
+75			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.57 \%		&1351\\
 \hline
-100			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&62.10 \%		&78\\
+100			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.57 \%		&1688\\
 \hline
-150			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&64.73 \%		&120\\
+150			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.57 \%		&2366\\
 \hline
 \end{tabular}
 \caption{Test Results for Last.FM user: \emph{3en}}
@@ -49,31 +49,31 @@ Similar Users	& Mood Length	& Weights							&Confidence	&Rank\\
 \hline
 Similar Users	& Mood Length	& Weights							&Confidence	&Rank\\
 \hline \hline
-50			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&50.43 \%		&N/A\\
+50			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.39 \%		&2376\\
 \hline
-75			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&50.43 \%		&N/A\\
+75			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.70 \%		&3376\\
 \hline
-100			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&50.43 \%		&7608\\
+100			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.93 \%		&4471\\
 \hline
-150			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&50.43 \%		&8828\\
+150			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.10 \%		&6332\\
 \hline
-200			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&52.40 \%		&10018\\
+200			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.10 \%		&8793\\
 \hline
-50			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&48.91 \%		&N/A\\
+50			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&59.12 \%		&2116\\
 \hline
-75			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&48.91 \%		&N/A\\
+75			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&59.12 \%		&3015\\
 \hline
-100			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&48.91 \%		&N/A\\
+100			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&60.09 \%		&4001\\
 \hline
-50			& 5			& \(\rfrac{1}{5}, \rfrac{2}{5}, \rfrac{2}{5}\)	&43.28 \%		&N/A\\
+50			& 5			& \(\rfrac{1}{5}, \rfrac{2}{5}, \rfrac{2}{5}\)	&58.47 \%		&2354\\
 \hline
-50			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&66.15 \%		&N/A\\
+50			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.70 \%		&2391\\
 \hline
-75			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&66.15 \%		&N/A\\
+75			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.70 \%		&3367\\
 \hline
-100			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&66.15 \%		&7095\\
+100			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.70 \%		&4454\\
 \hline
-150			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&66.15 \%		&7767\\
+150			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.70 \%		&6288\\
 \hline
 \end{tabular}
 \caption{Test Results for Last.FM user: \emph{RJ}}
@@ -86,31 +86,31 @@ Similar Users	& Mood Length	& Weights							&Confidence	&Rank\\
 \hline
 Similar Users	& Mood Length	& Weights							&Confidence	&Rank\\
 \hline \hline
-50			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&50.43 \%		&400\\
+50			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.59 \%		&59\\
 \hline
-75			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&50.43 \%		&607\\
+75			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.43 \%		&75\\
 \hline
-100			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&48.37 \%		&736\\
+100			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.43 \%		&106\\
 \hline
-150			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&51.94 \%		&1095\\
+150			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.70 \%		&70\\
 \hline
-200			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&51.94 \%		&1428\\
+200			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.70 \%		&87\\
 \hline
-50			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&48.91 \%		&2632\\
+50			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&59.89 \%		&32\\
 \hline
-75			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&48.91 \%		&3736\\
+75			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&59.86 \%		&43\\
 \hline
-100			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&46.91 \%		&4304\\
+100			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&59.84 \%		&56\\
 \hline
-50			& 5			& \(\rfrac{1}{5}, \rfrac{2}{5}, \rfrac{2}{5}\)	&43.28 \%		&563\\
+50			& 5			& \(\rfrac{1}{5}, \rfrac{2}{5}, \rfrac{2}{5}\)	&59.49 \%		&55\\
 \hline
-50			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&66.15 \%		&363\\
+50			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.94 \%		&85\\
 \hline
-75			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&66.15 \%		&555\\
+75			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&68.52 \%		&114\\
 \hline
-100			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&63.88 \%		&650\\
+100			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&68.52 \%		&145\\
 \hline
-150			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&64.59 \%		&970\\
+150			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.17 \%		&80\\
 \hline
 \end{tabular}
 \caption{Test Results for Last.FM user: \emph{eartle}}
@@ -123,31 +123,31 @@ Similar Users	& Mood Length	& Weights							&Confidence	&Rank\\
 \hline
 Similar Users	& Mood Length	& Weights							&Confidence	&Rank\\
 \hline \hline
-50			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&49.71 \%		&4744\\
+50			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&61.84 \%		&141\\
 \hline
-75			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&49.83 \%		&629\\
+75			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&61.60 \%		&189\\
 \hline
-100			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&49.71 \%		&674\\
+100			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&63.94 \%		&236\\
 \hline
-150			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&51.10 \%		&4351\\
+150			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&63.94 \%		&322\\
 \hline
-200			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&51.48 \%		&4363\\
+200			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&63.94 \%		&1163\\
 \hline
-50			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&47.49 \%		&3160\\
+50			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&59.08 \%		&267\\
 \hline
-75			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&47.49 \%		&3135\\
+75			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&59.13 \%		&376\\
 \hline
-100			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&47.54 \%		&3225\\
+100			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&59.13 \%		&478\\
 \hline
-50			& 5			& \(\rfrac{1}{5}, \rfrac{2}{5}, \rfrac{2}{5}\)	&43.28 \%		&4422\\
+50			& 5			& \(\rfrac{1}{5}, \rfrac{2}{5}, \rfrac{2}{5}\)	&58.66 \%		&184\\
 \hline
-50			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&64.43 \%		&4589\\
+50			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&67.74 \%		&103\\
 \hline
-75			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&66.18 \%		&470\\
+75			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&68.05 \%		&133\\
 \hline
-100			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&64.43 \%		&471\\
+100			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&71.64 \%		&162\\
 \hline
-150			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&64.43 \%		&5227\\
+150			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&71.64 \%		&240\\
 \hline
 \end{tabular}
 \caption{Test Results for Last.FM user: \emph{franhale}}
@@ -160,35 +160,72 @@ Similar Users	& Mood Length	& Weights							&Confidence	&Rank\\
 \hline
 Similar Users	& Mood Length	& Weights							&Confidence	&Rank\\
 \hline \hline
-50			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&48.89 \%		&N/A\\
+50			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.64 \%		&4953\\
 \hline
-75			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&50.09 \%		&9857\\
+75			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.96 \%		&1420\\
 \hline
-100			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&50.09 \%		&11647\\
+100			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.96 \%		&1873\\
 \hline
-150			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&51.10 \%		&6587\\
+150			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.96 \%		&2688\\
 \hline
-200			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&51.48 \%		&8008\\
+200			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.96 \%		&3431\\
 \hline
-50			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&48.08 \%		&N/A\\
+50			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&60.50 \%		&4680\\
 \hline
-75			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&48.08 \%		&2584\\
+75			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&60.50 \%		&1208\\
 \hline
-100			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&48.08 \%		&2887\\
+100			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&60.50 \%		&1599\\
 \hline
-50			& 5			& \(\rfrac{1}{5}, \rfrac{2}{5}, \rfrac{2}{5}\)	&43.28 \%		&N/A\\
+50			& 5			& \(\rfrac{1}{5}, \rfrac{2}{5}, \rfrac{2}{5}\)	&58.74 \%		&4776\\
 \hline
-50			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&63.29 \%		&N/A\\
+50			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.75 \%		&5005\\
 \hline
-75			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&65.97 \%		&7819\\
+75			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.75 \%		&1467\\
 \hline
-100			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&65.97 \%		&9345\\
+100			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.75 \%		&1919\\
 \hline
-150			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&68.19 \%		&5749\\
+150			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.75 \%		&2767\\
 \hline
 \end{tabular}
 \caption{Test Results for Last.FM user: \emph{massdosage}}
 \label{table:test_results_massdosage}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | c | c | c || c | c | }
+\hline
+Similar Users	& Mood Length	& Weights							&Confidence	&Rank\\
+\hline \hline
+50			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.47 \%		&1695\\
+\hline
+75			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&62.52 \%		&1287\\
+\hline
+100			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&63.10 \%		&1717\\
+\hline
+150			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&63.06 \%		&2362\\
+\hline
+200			& 5			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&63.06 \%		&3287\\
+\hline
+50			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&60.06 \%		&1562\\
+\hline
+75			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&60.06 \%		&1134\\
+\hline
+100			& 10			& \(\rfrac{1}{3}, \rfrac{1}{3}, \rfrac{1}{3}\)	&60.22 \%		&1480\\
+\hline
+50			& 5			& \(\rfrac{1}{5}, \rfrac{2}{5}, \rfrac{2}{5}\)	&58.84 \%		&1676\\
+\hline
+50			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.14 \%		&1704\\
+\hline
+75			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&69.72 \%		&1286\\
+\hline
+100			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.44 \%		&1674\\
+\hline
+150			& 5			& \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\)	&70.77 \%		&2348\\
+\hline
+\end{tabular}
+\caption{Average Test Results for Last.FM users: \emph{3en}, \emph{RJ}, \emph{eartle}, \emph{franhale}, \emph{massdosage}}
+\label{table:test_results_average}
 \end{table}
 
 	\section{Inference}
@@ -196,7 +233,9 @@ Similar Users	& Mood Length	& Weights							&Confidence	&Rank\\
 		
 		The rank illustrates the success of the recommendation by cross-checking with the songs the current user has actually heard next, i.e, the set of test songs chosen above. This however, determines the success of the tool in the current domain of the \(999,999\) songs.
 		
-		Based on the test results, it can inferred that a \emph{mood length} of \(5\) based on the histories of \(75\) other users with similar musical taste gives a set of good results. The song's property weightage of \(\rfrac{3}{5}, \rfrac{1}{5}, \rfrac{1}{5}\) is also seen to contribute well to the recommendations. Hence, these values are taken to be the default values of the tool. These can however be customised to give more weightage to a parameter of choice and thus get different sets of results.
+		Based on the test results, it can inferred that a \emph{mood length} of \(5\) based on the histories of \(75\) other users with similar musical taste gives a set of good results. The song's property weightage of 60\%, 20\%, 20\% along with a similarity and popularity ratio of 65\% and 35\% also contributes well to the recommendations. Hence, these values are taken to be the default values of the tool. These can however be customised to give more weightage to a parameter of choice and thus get different sets of results.
+		
+		The time taken to recommend has been observed to vary on the number of similar users chosen linearly, whereas, depends on the mood length by a power of \(3\).
 	
 	\section{Improvements}
 		This recommendation system has been built more as a \emph{proof of concept} than a competitive tool. A lot of things may enhance the performance the results of the recommendation and to make it even more accurate. Some of them have been discussed below.

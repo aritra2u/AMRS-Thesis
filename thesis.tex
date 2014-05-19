@@ -12,6 +12,7 @@
 \everymath{\displaystyle}
 
 %\usepackage{algorithm2e}
+\usepackage{pdfpages}
 
 % to write the date in the desired format
 \usepackage{datetime}
@@ -61,8 +62,9 @@
 	
 	\thispagestyle{empty}
 	\pagestyle{plain}
-	\include{certificate}
-%	\includepdf{certificate.pdf}
+	\cleardoublepage
+%	\include{certificate}
+	\includepdf{certificate_signed.pdf}
 
 	\pagenumbering{roman}
 	\pagestyle{plain}
